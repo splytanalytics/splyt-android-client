@@ -1,1 +1,0 @@
-# splyt-android-client
