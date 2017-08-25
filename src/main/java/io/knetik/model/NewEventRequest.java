@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.knetik.model.DataCollectorBaseRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,16 +26,106 @@ import java.io.IOException;
 /**
  * NewEventRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-25T17:08:27.219-04:00")
-public class NewEventRequest extends DataCollectorBaseRequest {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-25T17:55:54.350-04:00")
+public class NewEventRequest {
+  @SerializedName("device_id")
+  private String deviceId = null;
+
+  @SerializedName("event_properties")
+  private Object eventProperties = null;
+
+  @SerializedName("event_timestamp")
+  private Long eventTimestamp = null;
+
+  @SerializedName("request_type")
+  private String requestType = null;
+
   @SerializedName("result")
   private String result = null;
+
+  @SerializedName("send_timestamp")
+  private Long sendTimestamp = null;
 
   @SerializedName("transaction_id")
   private String transactionId = null;
 
+  @SerializedName("user_id")
+  private String userId = null;
+
   @SerializedName("category")
   private String category = null;
+
+  public NewEventRequest deviceId(String deviceId) {
+    this.deviceId = deviceId;
+    return this;
+  }
+
+   /**
+   * Unique ID of the device triggering the event
+   * @return deviceId
+  **/
+  @ApiModelProperty(value = "Unique ID of the device triggering the event")
+  public String getDeviceId() {
+    return deviceId;
+  }
+
+  public void setDeviceId(String deviceId) {
+    this.deviceId = deviceId;
+  }
+
+  public NewEventRequest eventProperties(Object eventProperties) {
+    this.eventProperties = eventProperties;
+    return this;
+  }
+
+   /**
+   * A key/value list of properties for this event. Values can be numerical, strings or booleans, proper typing matters (quoted vs unquoted)
+   * @return eventProperties
+  **/
+  @ApiModelProperty(value = "A key/value list of properties for this event. Values can be numerical, strings or booleans, proper typing matters (quoted vs unquoted)")
+  public Object getEventProperties() {
+    return eventProperties;
+  }
+
+  public void setEventProperties(Object eventProperties) {
+    this.eventProperties = eventProperties;
+  }
+
+  public NewEventRequest eventTimestamp(Long eventTimestamp) {
+    this.eventTimestamp = eventTimestamp;
+    return this;
+  }
+
+   /**
+   * Epoch timestamp &lt;i&gt;in milliseconds&lt;/i&gt; of when event itself occurred
+   * @return eventTimestamp
+  **/
+  @ApiModelProperty(required = true, value = "Epoch timestamp <i>in milliseconds</i> of when event itself occurred")
+  public Long getEventTimestamp() {
+    return eventTimestamp;
+  }
+
+  public void setEventTimestamp(Long eventTimestamp) {
+    this.eventTimestamp = eventTimestamp;
+  }
+
+  public NewEventRequest requestType(String requestType) {
+    this.requestType = requestType;
+    return this;
+  }
+
+   /**
+   * Specifies the canonical model name of the request. Ex: DataCollectorNewUserRequest -&gt; newUser, NewEventRequest -&gt; newEvent,e tc
+   * @return requestType
+  **/
+  @ApiModelProperty(required = true, value = "Specifies the canonical model name of the request. Ex: DataCollectorNewUserRequest -> newUser, NewEventRequest -> newEvent,e tc")
+  public String getRequestType() {
+    return requestType;
+  }
+
+  public void setRequestType(String requestType) {
+    this.requestType = requestType;
+  }
 
   public NewEventRequest result(String result) {
     this.result = result;
@@ -56,6 +145,24 @@ public class NewEventRequest extends DataCollectorBaseRequest {
     this.result = result;
   }
 
+  public NewEventRequest sendTimestamp(Long sendTimestamp) {
+    this.sendTimestamp = sendTimestamp;
+    return this;
+  }
+
+   /**
+   * Epoch timestamp &lt;i&gt;in milliseconds&lt;/i&gt; of when event was sent to the API
+   * @return sendTimestamp
+  **/
+  @ApiModelProperty(required = true, value = "Epoch timestamp <i>in milliseconds</i> of when event was sent to the API")
+  public Long getSendTimestamp() {
+    return sendTimestamp;
+  }
+
+  public void setSendTimestamp(Long sendTimestamp) {
+    this.sendTimestamp = sendTimestamp;
+  }
+
   public NewEventRequest transactionId(String transactionId) {
     this.transactionId = transactionId;
     return this;
@@ -72,6 +179,24 @@ public class NewEventRequest extends DataCollectorBaseRequest {
 
   public void setTransactionId(String transactionId) {
     this.transactionId = transactionId;
+  }
+
+  public NewEventRequest userId(String userId) {
+    this.userId = userId;
+    return this;
+  }
+
+   /**
+   * Unique ID of the user triggering the event
+   * @return userId
+  **/
+  @ApiModelProperty(value = "Unique ID of the user triggering the event")
+  public String getUserId() {
+    return userId;
+  }
+
+  public void setUserId(String userId) {
+    this.userId = userId;
   }
 
   public NewEventRequest category(String category) {
@@ -102,15 +227,20 @@ public class NewEventRequest extends DataCollectorBaseRequest {
       return false;
     }
     NewEventRequest newEventRequest = (NewEventRequest) o;
-    return Objects.equals(this.result, newEventRequest.result) &&
+    return Objects.equals(this.deviceId, newEventRequest.deviceId) &&
+        Objects.equals(this.eventProperties, newEventRequest.eventProperties) &&
+        Objects.equals(this.eventTimestamp, newEventRequest.eventTimestamp) &&
+        Objects.equals(this.requestType, newEventRequest.requestType) &&
+        Objects.equals(this.result, newEventRequest.result) &&
+        Objects.equals(this.sendTimestamp, newEventRequest.sendTimestamp) &&
         Objects.equals(this.transactionId, newEventRequest.transactionId) &&
-        Objects.equals(this.category, newEventRequest.category) &&
-        super.equals(o);
+        Objects.equals(this.userId, newEventRequest.userId) &&
+        Objects.equals(this.category, newEventRequest.category);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result, transactionId, category, super.hashCode());
+    return Objects.hash(deviceId, eventProperties, eventTimestamp, requestType, result, sendTimestamp, transactionId, userId, category);
   }
 
 
@@ -118,9 +248,15 @@ public class NewEventRequest extends DataCollectorBaseRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewEventRequest {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    
+    sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+    sb.append("    eventProperties: ").append(toIndentedString(eventProperties)).append("\n");
+    sb.append("    eventTimestamp: ").append(toIndentedString(eventTimestamp)).append("\n");
+    sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    sendTimestamp: ").append(toIndentedString(sendTimestamp)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -14,13 +14,146 @@
 package io.knetik.model;
 
 import java.util.Objects;
-import io.knetik.model.DataCollectorBaseRequest;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * DataCollectorUpdateUserStateRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-25T17:08:27.219-04:00")
-public class DataCollectorUpdateUserStateRequest extends DataCollectorBaseRequest {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-25T17:55:54.350-04:00")
+public class DataCollectorUpdateUserStateRequest {
+  @SerializedName("device_id")
+  private String deviceId = null;
+
+  @SerializedName("event_properties")
+  private Object eventProperties = null;
+
+  @SerializedName("event_timestamp")
+  private Long eventTimestamp = null;
+
+  @SerializedName("request_type")
+  private String requestType = null;
+
+  @SerializedName("send_timestamp")
+  private Long sendTimestamp = null;
+
+  @SerializedName("user_id")
+  private String userId = null;
+
+  public DataCollectorUpdateUserStateRequest deviceId(String deviceId) {
+    this.deviceId = deviceId;
+    return this;
+  }
+
+   /**
+   * Unique ID of the device triggering the event
+   * @return deviceId
+  **/
+  @ApiModelProperty(value = "Unique ID of the device triggering the event")
+  public String getDeviceId() {
+    return deviceId;
+  }
+
+  public void setDeviceId(String deviceId) {
+    this.deviceId = deviceId;
+  }
+
+  public DataCollectorUpdateUserStateRequest eventProperties(Object eventProperties) {
+    this.eventProperties = eventProperties;
+    return this;
+  }
+
+   /**
+   * A key/value list of properties for this event. Values can be numerical, strings or booleans, proper typing matters (quoted vs unquoted)
+   * @return eventProperties
+  **/
+  @ApiModelProperty(value = "A key/value list of properties for this event. Values can be numerical, strings or booleans, proper typing matters (quoted vs unquoted)")
+  public Object getEventProperties() {
+    return eventProperties;
+  }
+
+  public void setEventProperties(Object eventProperties) {
+    this.eventProperties = eventProperties;
+  }
+
+  public DataCollectorUpdateUserStateRequest eventTimestamp(Long eventTimestamp) {
+    this.eventTimestamp = eventTimestamp;
+    return this;
+  }
+
+   /**
+   * Epoch timestamp &lt;i&gt;in milliseconds&lt;/i&gt; of when event itself occurred
+   * @return eventTimestamp
+  **/
+  @ApiModelProperty(required = true, value = "Epoch timestamp <i>in milliseconds</i> of when event itself occurred")
+  public Long getEventTimestamp() {
+    return eventTimestamp;
+  }
+
+  public void setEventTimestamp(Long eventTimestamp) {
+    this.eventTimestamp = eventTimestamp;
+  }
+
+  public DataCollectorUpdateUserStateRequest requestType(String requestType) {
+    this.requestType = requestType;
+    return this;
+  }
+
+   /**
+   * Specifies the canonical model name of the request. Ex: DataCollectorNewUserRequest -&gt; newUser, NewEventRequest -&gt; newEvent,e tc
+   * @return requestType
+  **/
+  @ApiModelProperty(required = true, value = "Specifies the canonical model name of the request. Ex: DataCollectorNewUserRequest -> newUser, NewEventRequest -> newEvent,e tc")
+  public String getRequestType() {
+    return requestType;
+  }
+
+  public void setRequestType(String requestType) {
+    this.requestType = requestType;
+  }
+
+  public DataCollectorUpdateUserStateRequest sendTimestamp(Long sendTimestamp) {
+    this.sendTimestamp = sendTimestamp;
+    return this;
+  }
+
+   /**
+   * Epoch timestamp &lt;i&gt;in milliseconds&lt;/i&gt; of when event was sent to the API
+   * @return sendTimestamp
+  **/
+  @ApiModelProperty(required = true, value = "Epoch timestamp <i>in milliseconds</i> of when event was sent to the API")
+  public Long getSendTimestamp() {
+    return sendTimestamp;
+  }
+
+  public void setSendTimestamp(Long sendTimestamp) {
+    this.sendTimestamp = sendTimestamp;
+  }
+
+  public DataCollectorUpdateUserStateRequest userId(String userId) {
+    this.userId = userId;
+    return this;
+  }
+
+   /**
+   * Unique ID of the user for whom state is being updated
+   * @return userId
+  **/
+  @ApiModelProperty(required = true, value = "Unique ID of the user for whom state is being updated")
+  public String getUserId() {
+    return userId;
+  }
+
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -30,12 +163,18 @@ public class DataCollectorUpdateUserStateRequest extends DataCollectorBaseReques
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    DataCollectorUpdateUserStateRequest dataCollectorUpdateUserStateRequest = (DataCollectorUpdateUserStateRequest) o;
+    return Objects.equals(this.deviceId, dataCollectorUpdateUserStateRequest.deviceId) &&
+        Objects.equals(this.eventProperties, dataCollectorUpdateUserStateRequest.eventProperties) &&
+        Objects.equals(this.eventTimestamp, dataCollectorUpdateUserStateRequest.eventTimestamp) &&
+        Objects.equals(this.requestType, dataCollectorUpdateUserStateRequest.requestType) &&
+        Objects.equals(this.sendTimestamp, dataCollectorUpdateUserStateRequest.sendTimestamp) &&
+        Objects.equals(this.userId, dataCollectorUpdateUserStateRequest.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(deviceId, eventProperties, eventTimestamp, requestType, sendTimestamp, userId);
   }
 
 
@@ -43,7 +182,13 @@ public class DataCollectorUpdateUserStateRequest extends DataCollectorBaseReques
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DataCollectorUpdateUserStateRequest {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    
+    sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+    sb.append("    eventProperties: ").append(toIndentedString(eventProperties)).append("\n");
+    sb.append("    eventTimestamp: ").append(toIndentedString(eventTimestamp)).append("\n");
+    sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
+    sb.append("    sendTimestamp: ").append(toIndentedString(sendTimestamp)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
