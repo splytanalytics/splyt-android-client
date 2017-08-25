@@ -4,13 +4,13 @@ All URIs are relative to *https://api.knetik.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**newDevice**](DevicesApi.md#newDevice) | **POST** /v2/devices | Submit a new device event
-[**updateDeviceState**](DevicesApi.md#updateDeviceState) | **PUT** /v2/devices/{id} | Updates the state parameters for the given device
+[**newDevice**](DevicesApi.md#newDevice) | **POST** v2/devices | Submit a new device event
+[**updateDeviceState**](DevicesApi.md#updateDeviceState) | **PUT** v2/devices/{id} | Updates the state parameters for the given device
 
 
 <a name="newDevice"></a>
 # **newDevice**
-> newDevice(customerId, request, checked)
+> Void newDevice(customerId, request, checked)
 
 Submit a new device event
 
@@ -19,14 +19,17 @@ Declares to the Knetik.io platform that a device is new at the given point in ti
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.api.DevicesApi;
+//import io.knetik.client.ApiException;
+//import io.knetik.api.DevicesApi;
+
 
 DevicesApi apiInstance = new DevicesApi();
 String customerId = "customerId_example"; // String | customerId
 DataCollectorNewDeviceRequest request = new DataCollectorNewDeviceRequest(); // DataCollectorNewDeviceRequest | New device information
 Boolean checked = false; // Boolean | Flag indicating whether the device state should be checked before updating the state in the Knetik.io platform
 try {
-    apiInstance.newDevice(customerId, request, checked);
+    Void result = apiInstance.newDevice(customerId, request, checked);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DevicesApi#newDevice");
     e.printStackTrace();
@@ -43,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Void**](.md)
 
 ### Authorization
 
@@ -56,21 +59,24 @@ No authorization required
 
 <a name="updateDeviceState"></a>
 # **updateDeviceState**
-> updateDeviceState(id, customerId, request)
+> Void updateDeviceState(id, customerId, request)
 
 Updates the state parameters for the given device
 
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.api.DevicesApi;
+//import io.knetik.client.ApiException;
+//import io.knetik.api.DevicesApi;
+
 
 DevicesApi apiInstance = new DevicesApi();
 String id = "id_example"; // String | ID of the device for which state information is being updated
 String customerId = "customerId_example"; // String | customerId
 DataCollectorUpdateDeviceStateRequest request = new DataCollectorUpdateDeviceStateRequest(); // DataCollectorUpdateDeviceStateRequest | Updated device state information
 try {
-    apiInstance.updateDeviceState(id, customerId, request);
+    Void result = apiInstance.updateDeviceState(id, customerId, request);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DevicesApi#updateDeviceState");
     e.printStackTrace();
@@ -87,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Void**](.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.knetik.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**submitBatch**](BatchApi.md#submitBatch) | **POST** /v2/batch | Submit a batch of requests as an array of input models
+[**submitBatch**](BatchApi.md#submitBatch) | **POST** v2/batch | Submit a batch of requests as an array of input models
 
 
 <a name="submitBatch"></a>
@@ -18,7 +18,9 @@ For this to work, you will need to specify the value of the request_type field o
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.api.BatchApi;
+//import io.knetik.client.ApiException;
+//import io.knetik.api.BatchApi;
+
 
 BatchApi apiInstance = new BatchApi();
 String customerId = "customerId_example"; // String | customerId

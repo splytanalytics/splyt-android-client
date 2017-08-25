@@ -4,15 +4,15 @@ All URIs are relative to *https://api.knetik.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**beginTransaction**](TransactionsApi.md#beginTransaction) | **POST** /v2/transactions | Begins a new transaction
-[**endTransaction**](TransactionsApi.md#endTransaction) | **PUT** /v2/transactions/{id}/end | Ends the transaction
-[**updateCollection**](TransactionsApi.md#updateCollection) | **POST** /v2/collections | Creates and finalizes a collection of transaction information
-[**updateTransaction**](TransactionsApi.md#updateTransaction) | **PUT** /v2/transactions/{id} | Updates the progress for the given transaction
+[**beginTransaction**](TransactionsApi.md#beginTransaction) | **POST** v2/transactions | Begins a new transaction
+[**endTransaction**](TransactionsApi.md#endTransaction) | **PUT** v2/transactions/{id}/end | Ends the transaction
+[**updateCollection**](TransactionsApi.md#updateCollection) | **POST** v2/collections | Creates and finalizes a collection of transaction information
+[**updateTransaction**](TransactionsApi.md#updateTransaction) | **PUT** v2/transactions/{id} | Updates the progress for the given transaction
 
 
 <a name="beginTransaction"></a>
 # **beginTransaction**
-> beginTransaction(customerId, request)
+> Void beginTransaction(customerId, request)
 
 Begins a new transaction
 
@@ -21,13 +21,16 @@ Use the event properties to describe the initial state of the transaction
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.api.TransactionsApi;
+//import io.knetik.client.ApiException;
+//import io.knetik.api.TransactionsApi;
+
 
 TransactionsApi apiInstance = new TransactionsApi();
 String customerId = "customerId_example"; // String | customerId
 DataCollectorBeginTransactionRequest request = new DataCollectorBeginTransactionRequest(); // DataCollectorBeginTransactionRequest | Transaction initiation information
 try {
-    apiInstance.beginTransaction(customerId, request);
+    Void result = apiInstance.beginTransaction(customerId, request);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransactionsApi#beginTransaction");
     e.printStackTrace();
@@ -43,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Void**](.md)
 
 ### Authorization
 
@@ -56,7 +59,7 @@ No authorization required
 
 <a name="endTransaction"></a>
 # **endTransaction**
-> endTransaction(id, customerId, request)
+> Void endTransaction(id, customerId, request)
 
 Ends the transaction
 
@@ -65,14 +68,17 @@ Submits final transaction state to Knetik.io
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.api.TransactionsApi;
+//import io.knetik.client.ApiException;
+//import io.knetik.api.TransactionsApi;
+
 
 TransactionsApi apiInstance = new TransactionsApi();
 String id = "id_example"; // String | Unique ID of the transaction being finalized
 String customerId = "customerId_example"; // String | customerId
 DataCollectorEndTransactionRequest request = new DataCollectorEndTransactionRequest(); // DataCollectorEndTransactionRequest | Transaction finalization information
 try {
-    apiInstance.endTransaction(id, customerId, request);
+    Void result = apiInstance.endTransaction(id, customerId, request);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransactionsApi#endTransaction");
     e.printStackTrace();
@@ -89,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Void**](.md)
 
 ### Authorization
 
@@ -102,7 +108,7 @@ No authorization required
 
 <a name="updateCollection"></a>
 # **updateCollection**
-> updateCollection(customerId, request)
+> Void updateCollection(customerId, request)
 
 Creates and finalizes a collection of transaction information
 
@@ -111,13 +117,16 @@ This operation basically encapsulates beginTransaction and endTransaction semant
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.api.TransactionsApi;
+//import io.knetik.client.ApiException;
+//import io.knetik.api.TransactionsApi;
+
 
 TransactionsApi apiInstance = new TransactionsApi();
 String customerId = "customerId_example"; // String | customerId
 DataCollectorUpdateCollectionRequest request = new DataCollectorUpdateCollectionRequest(); // DataCollectorUpdateCollectionRequest | Collection state information
 try {
-    apiInstance.updateCollection(customerId, request);
+    Void result = apiInstance.updateCollection(customerId, request);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransactionsApi#updateCollection");
     e.printStackTrace();
@@ -133,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Void**](.md)
 
 ### Authorization
 
@@ -146,7 +155,7 @@ No authorization required
 
 <a name="updateTransaction"></a>
 # **updateTransaction**
-> updateTransaction(id, customerId, request)
+> Void updateTransaction(id, customerId, request)
 
 Updates the progress for the given transaction
 
@@ -155,14 +164,17 @@ Use the event properties to update the state of the transaction
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.api.TransactionsApi;
+//import io.knetik.client.ApiException;
+//import io.knetik.api.TransactionsApi;
+
 
 TransactionsApi apiInstance = new TransactionsApi();
 String id = "id_example"; // String | Unique ID of the transaction being updated
 String customerId = "customerId_example"; // String | customerId
 DataCollectorUpdateTransactionRequest request = new DataCollectorUpdateTransactionRequest(); // DataCollectorUpdateTransactionRequest | Transaction progress information
 try {
-    apiInstance.updateTransaction(id, customerId, request);
+    Void result = apiInstance.updateTransaction(id, customerId, request);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransactionsApi#updateTransaction");
     e.printStackTrace();
@@ -179,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Void**](.md)
 
 ### Authorization
 

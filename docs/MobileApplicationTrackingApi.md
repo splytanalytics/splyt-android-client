@@ -4,25 +4,28 @@ All URIs are relative to *https://api.knetik.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**submitTuneRequest**](MobileApplicationTrackingApi.md#submitTuneRequest) | **POST** /v2/tune | Submit mobile application tracking data for Tune applications
+[**submitTuneRequest**](MobileApplicationTrackingApi.md#submitTuneRequest) | **POST** v2/tune | Submit mobile application tracking data for Tune applications
 
 
 <a name="submitTuneRequest"></a>
 # **submitTuneRequest**
-> submitTuneRequest(customerId, request)
+> Void submitTuneRequest(customerId, request)
 
 Submit mobile application tracking data for Tune applications
 
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.api.MobileApplicationTrackingApi;
+//import io.knetik.client.ApiException;
+//import io.knetik.api.MobileApplicationTrackingApi;
+
 
 MobileApplicationTrackingApi apiInstance = new MobileApplicationTrackingApi();
 String customerId = "customerId_example"; // String | customerId
 DataCollectorTuneRequest request = new DataCollectorTuneRequest(); // DataCollectorTuneRequest | Tune campaign tracking information
 try {
-    apiInstance.submitTuneRequest(customerId, request);
+    Void result = apiInstance.submitTuneRequest(customerId, request);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MobileApplicationTrackingApi#submitTuneRequest");
     e.printStackTrace();
@@ -38,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**Void**](.md)
 
 ### Authorization
 
