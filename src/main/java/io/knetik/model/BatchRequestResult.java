@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * BatchRequestResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-25T17:55:54.350-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-23T15:55:06.536-04:00")
 public class BatchRequestResult {
   @SerializedName("code")
   private Integer code = null;

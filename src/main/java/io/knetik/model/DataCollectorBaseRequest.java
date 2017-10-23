@@ -26,7 +26,8 @@ import java.io.IOException;
 /**
  * DataCollectorBaseRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-25T17:55:54.350-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-23T15:55:06.536-04:00")
+
 public class DataCollectorBaseRequest {
   @SerializedName("device_id")
   private String deviceId = null;

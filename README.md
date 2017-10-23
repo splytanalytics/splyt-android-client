@@ -26,7 +26,7 @@ After the client library is installed/deployed, you can use it in your Maven pro
 <dependency>
     <groupId>io.knetik</groupId>
     <artifactId>knetikio-android-client</artifactId>
-    <version>3.0.6</version>
+    <version>3.0.7</version>
     <scope>compile</scope>
 </dependency>
 

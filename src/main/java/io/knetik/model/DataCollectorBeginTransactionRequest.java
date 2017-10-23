@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.knetik.model.DataCollectorBaseRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -26,23 +27,8 @@ import java.io.IOException;
 /**
  * DataCollectorBeginTransactionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-25T17:55:54.350-04:00")
-public class DataCollectorBeginTransactionRequest {
-  @SerializedName("device_id")
-  private String deviceId = null;
-
-  @SerializedName("event_properties")
-  private Object eventProperties = null;
-
-  @SerializedName("event_timestamp")
-  private Long eventTimestamp = null;
-
-  @SerializedName("request_type")
-  private String requestType = null;
-
-  @SerializedName("send_timestamp")
-  private Long sendTimestamp = null;
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-23T15:55:06.536-04:00")
+public class DataCollectorBeginTransactionRequest extends DataCollectorBaseRequest {
   @SerializedName("timeout")
   private Integer timeout = null;
 
@@ -99,101 +85,8 @@ public class DataCollectorBeginTransactionRequest {
   @SerializedName("transaction_id")
   private String transactionId = null;
 
-  @SerializedName("user_id")
-  private String userId = null;
-
   @SerializedName("category")
   private String category = null;
-
-  public DataCollectorBeginTransactionRequest deviceId(String deviceId) {
-    this.deviceId = deviceId;
-    return this;
-  }
-
-   /**
-   * Unique ID of the device triggering the event
-   * @return deviceId
-  **/
-  @ApiModelProperty(value = "Unique ID of the device triggering the event")
-  public String getDeviceId() {
-    return deviceId;
-  }
-
-  public void setDeviceId(String deviceId) {
-    this.deviceId = deviceId;
-  }
-
-  public DataCollectorBeginTransactionRequest eventProperties(Object eventProperties) {
-    this.eventProperties = eventProperties;
-    return this;
-  }
-
-   /**
-   * A key/value list of properties for this event. Values can be numerical, strings or booleans, proper typing matters (quoted vs unquoted)
-   * @return eventProperties
-  **/
-  @ApiModelProperty(value = "A key/value list of properties for this event. Values can be numerical, strings or booleans, proper typing matters (quoted vs unquoted)")
-  public Object getEventProperties() {
-    return eventProperties;
-  }
-
-  public void setEventProperties(Object eventProperties) {
-    this.eventProperties = eventProperties;
-  }
-
-  public DataCollectorBeginTransactionRequest eventTimestamp(Long eventTimestamp) {
-    this.eventTimestamp = eventTimestamp;
-    return this;
-  }
-
-   /**
-   * Epoch timestamp &lt;i&gt;in milliseconds&lt;/i&gt; of when event itself occurred
-   * @return eventTimestamp
-  **/
-  @ApiModelProperty(required = true, value = "Epoch timestamp <i>in milliseconds</i> of when event itself occurred")
-  public Long getEventTimestamp() {
-    return eventTimestamp;
-  }
-
-  public void setEventTimestamp(Long eventTimestamp) {
-    this.eventTimestamp = eventTimestamp;
-  }
-
-  public DataCollectorBeginTransactionRequest requestType(String requestType) {
-    this.requestType = requestType;
-    return this;
-  }
-
-   /**
-   * Specifies the canonical model name of the request. Ex: DataCollectorNewUserRequest -&gt; newUser, NewEventRequest -&gt; newEvent,e tc
-   * @return requestType
-  **/
-  @ApiModelProperty(required = true, value = "Specifies the canonical model name of the request. Ex: DataCollectorNewUserRequest -> newUser, NewEventRequest -> newEvent,e tc")
-  public String getRequestType() {
-    return requestType;
-  }
-
-  public void setRequestType(String requestType) {
-    this.requestType = requestType;
-  }
-
-  public DataCollectorBeginTransactionRequest sendTimestamp(Long sendTimestamp) {
-    this.sendTimestamp = sendTimestamp;
-    return this;
-  }
-
-   /**
-   * Epoch timestamp &lt;i&gt;in milliseconds&lt;/i&gt; of when event was sent to the API
-   * @return sendTimestamp
-  **/
-  @ApiModelProperty(required = true, value = "Epoch timestamp <i>in milliseconds</i> of when event was sent to the API")
-  public Long getSendTimestamp() {
-    return sendTimestamp;
-  }
-
-  public void setSendTimestamp(Long sendTimestamp) {
-    this.sendTimestamp = sendTimestamp;
-  }
 
   public DataCollectorBeginTransactionRequest timeout(Integer timeout) {
     this.timeout = timeout;
@@ -249,24 +142,6 @@ public class DataCollectorBeginTransactionRequest {
     this.transactionId = transactionId;
   }
 
-  public DataCollectorBeginTransactionRequest userId(String userId) {
-    this.userId = userId;
-    return this;
-  }
-
-   /**
-   * Unique ID of the user triggering the event
-   * @return userId
-  **/
-  @ApiModelProperty(value = "Unique ID of the user triggering the event")
-  public String getUserId() {
-    return userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
-
   public DataCollectorBeginTransactionRequest category(String category) {
     this.category = category;
     return this;
@@ -295,21 +170,16 @@ public class DataCollectorBeginTransactionRequest {
       return false;
     }
     DataCollectorBeginTransactionRequest dataCollectorBeginTransactionRequest = (DataCollectorBeginTransactionRequest) o;
-    return Objects.equals(this.deviceId, dataCollectorBeginTransactionRequest.deviceId) &&
-        Objects.equals(this.eventProperties, dataCollectorBeginTransactionRequest.eventProperties) &&
-        Objects.equals(this.eventTimestamp, dataCollectorBeginTransactionRequest.eventTimestamp) &&
-        Objects.equals(this.requestType, dataCollectorBeginTransactionRequest.requestType) &&
-        Objects.equals(this.sendTimestamp, dataCollectorBeginTransactionRequest.sendTimestamp) &&
-        Objects.equals(this.timeout, dataCollectorBeginTransactionRequest.timeout) &&
+    return Objects.equals(this.timeout, dataCollectorBeginTransactionRequest.timeout) &&
         Objects.equals(this.timeoutMode, dataCollectorBeginTransactionRequest.timeoutMode) &&
         Objects.equals(this.transactionId, dataCollectorBeginTransactionRequest.transactionId) &&
-        Objects.equals(this.userId, dataCollectorBeginTransactionRequest.userId) &&
-        Objects.equals(this.category, dataCollectorBeginTransactionRequest.category);
+        Objects.equals(this.category, dataCollectorBeginTransactionRequest.category) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(deviceId, eventProperties, eventTimestamp, requestType, sendTimestamp, timeout, timeoutMode, transactionId, userId, category);
+    return Objects.hash(timeout, timeoutMode, transactionId, category, super.hashCode());
   }
 
 
@@ -317,16 +187,10 @@ public class DataCollectorBeginTransactionRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DataCollectorBeginTransactionRequest {\n");
-    
-    sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-    sb.append("    eventProperties: ").append(toIndentedString(eventProperties)).append("\n");
-    sb.append("    eventTimestamp: ").append(toIndentedString(eventTimestamp)).append("\n");
-    sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
-    sb.append("    sendTimestamp: ").append(toIndentedString(sendTimestamp)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
     sb.append("    timeoutMode: ").append(toIndentedString(timeoutMode)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("}");
     return sb.toString();

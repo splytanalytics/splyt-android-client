@@ -52,12 +52,26 @@ public class JSON {
     public JSON() {
     
     	// register polymorphic type adapters
+        RuntimeTypeAdapterFactory<DataCollectorBaseRequest> DataCollectorBaseRequestAdapterFactory = RuntimeTypeAdapterFactory
+			.of(DataCollectorBaseRequest.class, "request_type")
+			.registerSubtype(DataCollectorNewUserRequest.class, "newUser")
+						.registerSubtype(DataCollectorUpdateDeviceStateRequest.class, "updateDeviceState")
+						.registerSubtype(DataCollectorUpdateUserStateRequest.class, "updateUserState")
+						.registerSubtype(DataCollectorNewDeviceRequest.class, "newDevice")
+						.registerSubtype(DataCollectorBeginTransactionRequest.class, "beginTransaction")
+						.registerSubtype(DataCollectorTuneRequest.class, "tune")
+						.registerSubtype(DataCollectorUpdateCollectionRequest.class, "updateCollection")
+						.registerSubtype(NewEventRequest.class, "newEvent")
+						.registerSubtype(DataCollectorUpdateTransactionRequest.class, "updateTransaction")
+						.registerSubtype(DataCollectorEndTransactionRequest.class, "endTransaction")
+			;
     
         gson = new GsonBuilder()
             .registerTypeAdapter(Date.class, dateTypeAdapter)
             .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
             .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
             .registerTypeAdapter(LocalDate.class, localDateTypeAdapter)
+            .registerTypeAdapterFactory(DataCollectorBaseRequestAdapterFactory)	
             .create();
     }
 

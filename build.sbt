@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "io.knetik",
     name := "knetikio-android-client",
-    version := "3.0.6",
+    version := "3.0.7",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
